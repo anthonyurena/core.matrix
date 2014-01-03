@@ -461,3 +461,12 @@
   (testing "mutability"
     (is (not (mutable? [1 2])))
     (is (mutable? (double-array [1 2])))))
+
+(deftest test-comparisons
+  (testing "compare"
+    (is (equals [[0 0] [0 0]]
+           (compare [[0 0] [0 0]] [[0 0] [0 0]]))
+        (equals [[1 1] [1 1]]
+           (compare [[1 1] [1 1]] [[0 0] [0 0]]))
+        (equals [[-1 -1] [-1 -1]]
+           (compare [[0 0] [0 0]] [[1 1] [1 1]])))))
