@@ -469,7 +469,9 @@
     (is (equals [[1 1] [1 1]]
            (cmp [[1 1] [1 1]] [[0 0] [0 0]])))
     (is (equals [[-1 -1] [-1 -1]]
-           (cmp [[0 0] [0 0]] [[1 1] [1 1]]))))
+           (cmp [[0 0] [0 0]] [[1 1] [1 1]])))))
+
+(deftest test-minmax-ops
   (testing "maximum"
     (is (== 5 (maximum [1 2 3 4 5])))
     (is (== 0 (maximum [0 -1 -2 -3 -5])))
