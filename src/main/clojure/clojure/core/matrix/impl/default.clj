@@ -1382,9 +1382,9 @@
   (identity-matrix? [m] false)
   (zero-matrix? [m] false))
 
-(extend-protocol mp/PCompare
+(extend-protocol mp/PComparison
   Object
-  (compare [a b]
+  (cmp [a b]
     (mp/element-map (mp/matrix-sub a b) #(int (mops/signum %)))))
 
 ;; =======================================================

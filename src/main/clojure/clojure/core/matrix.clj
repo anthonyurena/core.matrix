@@ -1399,7 +1399,7 @@
   ([m]
     (alter-var-root (var clojure.core.matrix/*matrix-implementation*)
                     (fn [_] (imp/get-implementation-key m)))))
-(defn compare
+(defn cmp
   "Performs element-wise comparison."
   [a b]
-  (mp/compare a b))
+  (mp/cmp a b))

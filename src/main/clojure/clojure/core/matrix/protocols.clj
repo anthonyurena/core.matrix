@@ -689,9 +689,9 @@
   (generic-negate [m] "Generic 'negate' function for numerical values.")
   (generic-div [m] "Generic 'div' function for numerical values."))
 
-(defprotocol PCompare
+(defprotocol PComparison
   "Protocol to support element-wise comparison."
-  (compare [a b]))
+  (cmp [a b]))
 
 ;; ============================================================
 ;; Utility functions
