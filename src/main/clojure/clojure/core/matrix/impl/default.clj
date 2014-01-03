@@ -1301,6 +1301,10 @@
   Object
    (square [m] (mp/element-multiply m m)))
 
+(extend-protocol mp/PCompare
+  Object
+  (compare [a b] (mp/element-reduce (mp/matrix-sub a b) #(int (mops/signum %)))))
+
 ;; define standard Java maths functions for numbers
 (eval
   `(extend-protocol mp/PMathsFunctions
@@ -1382,9 +1386,14 @@
   (identity-matrix? [m] false)
   (zero-matrix? [m] false))
 
+(extend-protocol mp/PCompare
+  Object
+  (compare [a b]
+    (mp/element-map (mp/matrix-sub a b) #(int (mops/signum %)))))
 
 ;; =======================================================
 ;; default multimethod implementations
 
 (defmethod mm/mul :default [x y]
   (mp/inner-product x y))
+
