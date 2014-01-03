@@ -1403,3 +1403,6 @@
   "Performs element-wise comparison."
   [a b]
   (mp/cmp a b))
+
+(defn maximum [m]
+  (mp/maximum m))
