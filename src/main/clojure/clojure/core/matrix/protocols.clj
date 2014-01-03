@@ -692,7 +692,8 @@
 (defprotocol PComparison
   "Protocol to support element-wise comparison."
   (cmp [a b])
-  (maximum [m]))
+  (maximum [m])
+  (minimum [m]))
 
 ;; ============================================================
 ;; Utility functions

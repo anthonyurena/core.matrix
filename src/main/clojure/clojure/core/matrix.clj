@@ -1406,3 +1406,6 @@
 
 (defn maximum [m]
   (mp/maximum m))
+
+(defn minimum [m]
+  (mp/minimum m))

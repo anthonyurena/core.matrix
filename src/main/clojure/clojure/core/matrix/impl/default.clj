@@ -1387,7 +1387,7 @@
   (cmp [a b]
     (mp/element-map (mp/matrix-sub a b) #(int (mops/signum %))))
   (maximum [m] (apply max (mp/as-vector m)))
-)
+  (minimum [m] (apply min (mp/as-vector m))))
 
 ;; =======================================================
 ;; default multimethod implementations
