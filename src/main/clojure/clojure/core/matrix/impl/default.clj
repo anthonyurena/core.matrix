@@ -1385,7 +1385,10 @@
 (extend-protocol mp/PComparison
   Object
   (cmp [a b]
-    (mp/element-map (mp/matrix-sub a b) #(int (mops/signum %))))
+    (mp/element-map (mp/matrix-sub a b) #(int (mops/signum %)))))
+
+(extend-protocol mp/PMinMax
+  Object
   (maximum [m] (apply max (mp/as-vector m)))
   (minimum [m] (apply min (mp/as-vector m))))
 
