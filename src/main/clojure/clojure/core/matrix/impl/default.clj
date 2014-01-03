@@ -1301,10 +1301,6 @@
   Object
    (square [m] (mp/element-multiply m m)))
 
-(extend-protocol mp/PCompare
-  Object
-  (compare [a b] (mp/element-reduce (mp/matrix-sub a b) #(int (mops/signum %)))))
-
 ;; define standard Java maths functions for numbers
 (eval
   `(extend-protocol mp/PMathsFunctions
